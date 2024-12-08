@@ -22,7 +22,7 @@
   padding: 0 1.5rem;
   z-index: 1001;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  border-bottom: 1px solid var(--accent-red);
+  border-bottom: 1px solid var(--accent-purple);
 }
 
 .sidebar {
@@ -39,7 +39,7 @@
   transition: transform 0.3s ease;
   z-index: 1000;
   box-shadow: 4px 0 8px rgba(0, 0, 0, 0.15);
-  border-right: 1px solid var(--accent-red);
+  border-right: 1px solid var(--accent-purple);
   overflow: hidden;
 }
 
@@ -62,7 +62,7 @@
 }
 
 .new-chat-button {
-  border: 1px solid var(--accent-red);
+  border: 1px solid var(--accent-purple);
   border-radius: 0.375rem;
   padding: 0.75rem;
   background: transparent;
@@ -107,7 +107,7 @@
   gap: 1rem;
   max-width: 48rem;
   margin: 0 auto;
-  border-bottom: 1px solid var(--accent-red);
+  border-bottom: 1px solid var(--accent-purple);
   position: relative;
 }
 
@@ -137,7 +137,7 @@
   padding: 1.5rem;
   background-color: var(--primary-black);
   transition: width 0.3s ease;
-  border-top: 1px solid var(--accent-red);
+  border-top: 1px solid var(--accent-purple);
 }
 
 .shifted .input-container {
@@ -153,7 +153,7 @@
 .message-input {
   width: 100%;
   background-color: var(--input-background);
-  border: 1px solid var(--accent-red);
+  border: 1px solid var(--accent-purple);
   border-radius: 0.75rem;
   color: var(--text-primary);
   font-size: 1rem;
@@ -166,8 +166,8 @@
 
 .message-input:focus {
   outline: none;
-  border-color: var(--accent-red-hover);
-  box-shadow: 0 0 0 2px rgba(255, 68, 68, 0.2);
+  border-color: var(--accent-purple-hover);
+  box-shadow: 0 0 0 2px rgba(153, 102, 204, 0.2);
 }
 
 .send-button {
@@ -176,14 +176,14 @@
   bottom: 0.75rem;
   background: transparent;
   border: none;
-  color: var(--accent-red);
+  color: var(--accent-purple);
   cursor: pointer;
   padding: 0.25rem;
   transition: color 0.2s ease;
 }
 
 .send-button:hover {
-  color: var(--accent-red-hover);
+  color: var(--accent-purple-hover);
 }
 
 .profile-section {
@@ -191,7 +191,7 @@
   margin-bottom: 6rem;
   padding-top: 0;
   padding-bottom: auto;
-  border-top: 1px solid var(--accent-red);
+  border-top: 1px solid var(--accent-purple);
 }
 
 .profile-button {
@@ -219,7 +219,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  background-color: var(--accent-red);
+  background-color: var(--accent-purple);
   border-radius: 50%;
   color: var(--text-primary);
   font-size: 0.875rem;
