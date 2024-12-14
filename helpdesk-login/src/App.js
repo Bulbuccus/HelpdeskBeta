@@ -91,6 +91,13 @@ function App() {
             goBack={() => setCurrentPage(user.role === "student" ? "student" : "admin")}
           />
         );
+      case "FAQ" :
+        return (
+        <FAQPage
+          onLogout={handleLogout}
+          goBack={() => setCurrentPage(user.role === "student" ? "student" : "admin")}
+        />
+        );
       default:
         return <h1>Page not found</h1>;
     }
