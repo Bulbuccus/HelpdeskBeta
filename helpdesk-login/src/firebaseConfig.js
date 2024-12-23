@@ -2,6 +2,7 @@
 import { initializeApp } from "firebase/app";
 import { getAuth, GoogleAuthProvider, signInWithPopup } from "firebase/auth";
 import { getDatabase } from "firebase/database";
+import { getFirestore } from "firebase/firestore";
 
 
 const firebaseConfig = {
@@ -19,6 +20,7 @@ const firebaseConfig = {
 const app = initializeApp(firebaseConfig);
 const auth = getAuth(app);
 const googleProvider = new GoogleAuthProvider();
-const database = getDatabase(app);
+const database = getDatabase(app); // Realtime Database instance
+const db = getFirestore(app); // Firestore instance
 
-export { auth, googleProvider,database, signInWithPopup };
+export { auth, googleProvider,database, signInWithPopup, db };

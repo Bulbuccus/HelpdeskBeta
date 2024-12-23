@@ -1,30 +1,35 @@
-import { ref, set } from "firebase/database";
-import { database } from "../firebaseConfig";
+import { db } from '../firebaseConfig';
+import { setDoc, doc } from "firebase/firestore";
 
-export const faqData = [
-    {
+const faqData = {
+  faqs: {
+    faq1: {
       question: "How do I submit an amendment request?",
-      answer: "You can submit amendment requests through the UTM portal at https://my.utm.my/. Log in with your credentials and navigate to the 'Amendment Requests' section."
+      answer: "You can submit amendment requests through the UTM portal at https://my.utm.my/. Log in with your credentials and navigate to the 'Amendment Requests' section.",
+      category: "Registration"
     },
-    {
+    faq2: {
       question: "What are the Faculty's office hours?",
-      answer: "The Faculty of Computing office is open Monday through Friday, 8:00 AM to 5:00 PM. The office is closed on weekends and public holidays."
+      answer: "The Faculty of Computing office is open Monday through Friday, 8:00 AM to 5:00 PM. The office is closed on weekends and public holidays.",
+      category: "General Information"
     },
-    {
-      question: "How can I contact my academic advisor?",
-      answer: "You can find your academic advisor's contact information in the UTM portal under 'Academic Information'. Most advisors can be reached via their UTM email or during their posted office hours."
-    },
-    {
+    faq3: {
       question: "Where can I find my class schedule?",
-      answer: "Your class schedule is available in the UTM portal (https://my.utm.my/). After logging in, go to the 'Academic' section and select 'Class Schedule'."
+      answer: "Your class schedule is available in the UTM portal (https://my.utm.my/). After logging in, go to the 'Academic' section and select 'Class Schedule'.",
+      category: "Schedule"
     }
-  ];
-
-  const uploadFAQData = async () => {
-    const faqRef = ref(database, "faq"); // Create a reference to 'faq' node
-    await set(faqRef, faqData);
-    console.log("FAQ data uploaded successfully!");
+  }
 };
 
-// Call the function
-uploadFAQData();
+const uploadFAQs = async () => {
+  try {
+    for (const [key, value] of Object.entries(faqData.faqs)) {
+      await setDoc(doc(db, "faqs", key), value); // 'faqs' is the collection, 'key' is the document ID
+    }
+    console.log("FAQs uploaded successfully!");
+  } catch (error) {
+    console.error("Error uploading FAQs:", error);
+  }
+};
+
+//uploadFAQs();
